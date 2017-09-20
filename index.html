@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia!</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+
+</head>
+<body>
+	<!-- Going to make three main elements within the container div that will represent the start page, form, and results page.
+		 These will simply have display:none when theyre not in use, and the display states will be changed when the game is played. -->
+	<div class="container">
+		<!-- This is the title of the game; this will remain visible throughout at the top. -->
+		<div class ="container jumbotron text-center">
+			<h1>Most Googled Trivia!</h1>
+		</div>
+		<!-- This is the Start Button page; this will be visible until the start button is clicked, which also starts the timer! -->
+		<div id="main1" class="container jumbotron text-center">
+			<p>
+				The questions you are about to be asked are some of the most commonly searched for questions on Google, ever.
+			</p>
+			<p>
+				Let's see if you can do Google's job.
+			</p> <br>
+			<button id="start-button" type="button" class="btn btn-success">Start Game!</button>
+
+		</div>
+		<!-- This is the form itself, which will only be visible once the start button is clicked. Contains Submit button and timer. -->
+		<!-- ADD INVISIBLE CLASS WHEN DONE FORMATTING THIS CONTAINER -->
+		<div id="main2" class="container invisible fixed-bottom">
+							
+			<!-- This is the form page. I probably could have dynamically generated these with jQuery but it didn't really seem easier or more efficient. Could be wrong though. -->
+			<!-- Also realizing now I didn't need to text center everything in the form since they inherit it from the form div -->
+			<!-- don't really feel like removing it now but just know that I know -->
+			<div id="form" class="col-12 jumbotron text-center">
+				<!-- Timer at the top of the form -->
+				<h1 id="timer-display">Time Left: <span id="time">30</span> seconds</h1><br>
+				
+				<!-- Question 1 -->
+				<h2 class="text-center">How many teaspoons are in a tablespoon?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionOne" id="inlineRadio1" value="option1"> 1
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionOne" id="inlineRadio2" value="option2"> 2
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionOne" id="inlineRadio3" value="option3"> 3
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionOne" id="inlineRadio4" value="option4"> 4
+					  </label>
+					</div>
+				</div>
+					
+				<!-- Question 2 -->
+				<h2 class="text-center">When is Labor Day?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionTwo" id="inlineRadio1" value="false"> August 14th
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionTwo" id="inlineRadio2" value="true"> September 4th
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionTwo" id="inlineRadio3" value="false"> October 2nd
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionTwo" id="inlineRadio4" value="false"> The Last Thursday of November
+					  </label>
+					</div>
+				</div>
+
+				<!-- Question 3 -->
+				<h2 class="text-center">How many days are in a year?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionThree" id="inlineRadio1" value="option1"> 300
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionThree" id="inlineRadio2" value="option2"> 365
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionThree" id="inlineRadio3" value="option3"> 350
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionThree" id="inlineRadio4" value="option4"> 333.33
+					  </label>
+					</div>
+				</div>
+
+				<!-- Question 4 -->
+				<h2 class="text-center">What does "smh" mean?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionFour" id="inlineRadio1" value="option1"> Share My Happiness
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionFour" id="inlineRadio2" value="option2"> Shake My Hand
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionFour" id="inlineRadio3" value="option3"> Shake My Head
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionFour" id="inlineRadio4" value="option4"> Shart My Heart
+					  </label>
+					</div>
+				</div>
+				
+				<!-- Question 5 -->
+				<h2 class="text-center">When is Father's Day</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionFive" id="inlineRadio1" value="option1"> June 17th
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionFive" id="inlineRadio2" value="option2"> July 12th
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionFive" id="inlineRadio3" value="option3"> Tomorrow, hope you remembered!
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionFive" id="inlineRadio4" value="option4"> May 7th
+					  </label>
+					</div>
+				</div>
+				
+				<!-- Question 6 -->
+				<h2 class="text-center">What to do when bored?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionSix" id="inlineRadio1" value="option1"> Something Productive
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionSix" id="inlineRadio2" value="option2"> Something Fulfilling
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionSix" id="inlineRadio3" value="option3"> Something Fun
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionSix" id="inlineRadio4" value="option4"> Browse Reddit
+					  </label>
+					</div>
+				</div>
+				
+				<!-- Question 7 -->
+				<h2 class="text-center">Can you get pregnant on your period?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionSeven" id="inlineRadio1" value="option1"> No, of course not.
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionSeven" id="inlineRadio2" value="option2"> Shit
+					  </label>
+					</div>
+					
+				</div>
+				
+				<!-- Question 8 -->
+				<h2 class="text-center">What is a Prime Number?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionEight" id="inlineRadio1" value="option1"> A whole number greater than 1, whose only two whole-number fractions are 1 and itself. 
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionEight" id="inlineRadio2" value="option2"> A whole number greater than 1, whose only two whole-number factors are 1 and itself. 
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionEight" id="inlineRadio3" value="option3"> A whole number greater than 1, whose only two whole-number denominators are 1 and itself. 
+					  </label>
+					</div>
+					<div class="form-check">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionEight" id="inlineRadio4" value="option4"> The leader of the Autobots.
+					  </label>
+					</div>
+				</div>
+				
+				<!-- Question 9 -->
+				<h2 class="text-center">How do you calculate your BMI?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionNine" id="inlineRadio1" value="option1"> Your head over your heels squared.
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionNine" id="inlineRadio2" value="option2"> Your weight over your height squared.
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionNine" id="inlineRadio3" value="option3"> Your height over your weight squared.
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionNine" id="inlineRadio4" value="option4"> Your mind over your matter squared.
+					  </label>
+					</div>
+				</div>
+				
+				<!-- Question 10 -->
+				<h2 class="text-center">What is the meaning of life?</h2>
+				<div class="text-center">
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionTen" id="inlineRadio1" value="option1"> WUBBA LUBBA DUB DUUUUUUUUUB
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionTen" id="inlineRadio2" value="option2"> Whatever you choose it to be.
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionTen" id="inlineRadio3" value="option3"> There is none.
+					  </label>
+					</div>
+					<div class="form-check form-check-inline">
+					  <label class="form-check-label">
+					    <input class="form-check-input" type="radio" name="questionTen" id="inlineRadio4" value="option4"> 42
+					  </label>
+					</div>
+				</div>
+
+					<button id="submit-btn" type="button" class="btn btn-outline-success btn-block">Submit Answers</button>
+			</div>
+			</div>
+		</div>
+		<!-- This is the results page, which will only be visible once either the time runs out OR the Submit button is clicked. -->
+		<!-- This will remain visible until refresh. I'm doing this because that is the MVP.-->
+		<!-- I may have misunderstood this concept, but it seems to mean "try to implement as little functionality as you can while still meeting the needs of the client". -->
+		<div id="main3" class="container jumbotron invisible fixed-bottom text-center">
+			<div id="trivia-done"><h1 id="display-finish-message">All Done!</h1></div>
+			<div id="display-correct"><h3>Correct Answers: <span id="amount-correct"></span></h3></div>
+			<div id="display-incorrect"><h3>Incorrect Answers: <span id="amount-incorrect"></span></h3></div>
+			<div id="display-unanswered"><h3>Unanswered: <span id="amount-unanswered"></span></h3></div>
+		</div>
+
+
+	</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+  		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  		crossorigin="anonymous"></script>
+<script type="text/javascript" 
+		src ="assets/logic/game.js"></script>
+</html>
