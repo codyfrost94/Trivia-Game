@@ -2,10 +2,12 @@
 var startButton = $("#start-button")
 var submitButton = $("#submit-btn")
 // My idea for scoring is to run a for loop and match the value of checked radio input to the index of this array
-	//within that, if checked=true,
+	//if checked=true,
 		//if the value of the checked radio input equals answerkey[i], push it to the answeredRight array
 		//if it doesn't equal the answer key answer, push to wrong answer array
 	//else, nothing happens
+//I could just have it see if the one that's checked has a value of true or false. Might do that instead. It's sort of built in
+//to the bootstrap radio inputs.
 var answerKey = ["3", "September 4th", ]
 var answeredRight= []
 var answeredWrong = []
